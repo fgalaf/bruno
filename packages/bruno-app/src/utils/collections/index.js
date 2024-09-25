@@ -470,7 +470,7 @@ export const transformCollectionToSaveToExportAsFile = (collection, options = {}
     request: {}
   };
 
-  let { request, docs, meta } = collection?.root || {};
+  let { request, docs, docs2, meta } = collection?.root || {};
   let { auth, headers, script = {}, vars = {}, tests } = request || {};
 
   // collection level auth
@@ -508,6 +508,7 @@ export const transformCollectionToSaveToExportAsFile = (collection, options = {}
   // collection level docs
   if (docs?.length) {
     collectionToSave.root.docs = docs;
+    collectionToSave.root.docs2 = docs2;
   }
   if (meta?.name) {
     collectionToSave.root.meta = {};

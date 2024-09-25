@@ -1177,7 +1177,6 @@ export const collectionsSlice = createSlice({
     },
     updateCollectionDocs: (state, action) => {
       const collection = findCollectionByUid(state.collections, action.payload.collectionUid);
-
       if (collection) {
         set(collection, 'root.docs', action.payload.docs);
       }
@@ -1725,12 +1724,13 @@ export const collectionsSlice = createSlice({
 
       if (collection) {
         const item = findItemInCollection(collection, action.payload.itemUid);
-
         if (item && isItemARequest(item)) {
           if (!item.draft) {
             item.draft = cloneDeep(item);
           }
           item.draft.request.docs = action.payload.docs;
+          console.log(action.payload.docs);
+          set(collection, 'root.docs2', action.payload.docs);
         }
       }
     }
