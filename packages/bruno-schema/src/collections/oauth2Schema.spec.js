@@ -1,4 +1,5 @@
 const { expect } = require('@jest/globals');
+const { uuid } = require('../utils/testUtils');
 const { oauth2Schema } = require('./index.js');
 
 describe('Authentication oauth2 Schema validation', () => {
@@ -7,11 +8,11 @@ describe('Authentication oauth2 Schema validation', () => {
             grantType: 'client_credentials',
             username: 'username',
             password: 'password',
-            callbackUrl: 'callback_url',
-            authorizationUrl: 'auth_url',
-            accessTokenUrl: 'access_token_url',
-            clientId: 'random_id',
-            clientSecret: 'random_secret',
+            callbackUrl: 'http://localhost:3000',
+            authorizationUrl: 'https://localhost:8080',
+            accessTokenUrl: 'https://localhost:5000',
+            clientId: uuid(),
+            clientSecret: uuid(),
             scope: 'scope',
             state: 'state',
             pkce: true
