@@ -338,5 +338,7 @@ module.exports = {
   itemSchema,
   environmentSchema,
   environmentsSchema,
-  collectionSchema
+  collectionSchema,
+  authBasicSchema,
+  oauth2Schema
 };

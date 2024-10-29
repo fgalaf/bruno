@@ -8,7 +8,7 @@
     "package.json"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "peerDependencies": {
     "yup": "^0.32.11"

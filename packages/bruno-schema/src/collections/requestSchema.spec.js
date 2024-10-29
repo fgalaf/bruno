@@ -37,4 +37,24 @@ describe('Request Schema Validation', () => {
       )
     ]);
   });
+
+  it('request schema must specify method to be used', async () => {
+    const request = {
+          url: 'https://restcountries.com/v2/alpha/in',
+          method: '',
+          headers: [],
+          params: [],
+          body: {
+            mode: 'none'
+          }
+        };
+
+        return Promise.all([
+          expect(requestSchema.validate(request)).rejects.toEqual(
+            validationErrorWithMessages(
+              'method is required'
+            )
+          )
+        ]);
+  });
 });
