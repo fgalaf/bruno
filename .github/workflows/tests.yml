@@ -78,6 +78,7 @@ jobs:
 #        with:
 #          files: packages/bruno-tests/collection/junit.xml
 #          comment_mode: always
+
   lint:
     name: Lint Codebase
     runs-on: ubuntu-latest
